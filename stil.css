@@ -1,0 +1,78 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0 30px;
+    position: relative;
+}
+.logoContainer{
+    display: flex;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav li{
+    transition: all 0.3s linear;
+}
+nav li:hover{
+    transform: scale(1.3);
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.menuIcon{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    visibility: hidden;
+}
+#menuButton{
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 700px) {
+    .menuIcon{
+        visibility: visible;
+    }
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav{
+        width: 100%;
+        display: none;
+    }
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+    nav li{
+        padding: 30px;
+    }
+    #menuButton:checked+nav{
+        display: block;
+    }
+}
